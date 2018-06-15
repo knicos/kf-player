@@ -54,6 +54,45 @@ describe(".data(Object)", function() {
 			assert.equal(player.duration(), 0.2);
 			assert.sameMembers(player.entities(), ["x1","y1","x2","y2"]);
 		});
+
+		it("guesses correct timestamp property from name", function() {
+			let player = new Player();
+			player.data({
+				data: [
+					{TIME: 100, x1: 200, y1: 200, x2: 300, y2: 200},
+					{TIME: 200, x1: 240, y1: 320, x2: 300, y2: 210}
+				]
+			});
+
+			assert.equal(player.frameCount(), 2);
+			assert.equal(player.duration(), 0.2);
+		});
+
+		it("guesses correct timestamp property from position", function() {
+			let player = new Player();
+			player.data({
+				data: [
+					{ts: 100, x1: 200, y1: 200, x2: 300, y2: 200},
+					{ts: 200, x1: 240, y1: 320, x2: 300, y2: 210}
+				]
+			});
+
+			assert.equal(player.frameCount(), 2);
+			assert.equal(player.duration(), 0.2);
+		});
+
+		it("uses first column as timestamp", function() {
+			let player = new Player();
+			player.data({
+				data: [
+					[100, 200, 200, 300, 200],
+					[200, 240, 320, 300, 210]
+				]
+			});
+
+			assert.equal(player.frameCount(), 2);
+			assert.equal(player.duration(), 0.2);
+		});
 	});
 });
 

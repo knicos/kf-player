@@ -43,7 +43,7 @@ KFPlayer.prototype.speed = function(s) {
 
 KFPlayer.prototype.frame = function() {
 	let t = Date.now();
-	let dt = t - this._start;
+	let dt = (t - this._start) / 1000;
 	return this.at(dt*this._speed);
 }
 

@@ -2,7 +2,7 @@
   "name": "kf-player",
   "version": "1.0.0",
   "description": "Keyframe player from time stamped data sets",
-  "main": "index.js",
+  "main": "js/index.js",
   "scripts": {
     "test": "mocha test",
     "coverage": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/*.js"
