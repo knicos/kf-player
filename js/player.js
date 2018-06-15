@@ -10,6 +10,8 @@ function KFPlayer() {
 	this._interp = INTERP_LINEAR;
 	this._threeD = false;
 	this._entities = {};
+	this._start = Date.now();
+	this._speed = 1;
 }
 
 /** Duration of entire animation in seconds */
@@ -24,6 +26,25 @@ KFPlayer.prototype.entities = function() {
 
 KFPlayer.prototype.frameCount = function() {
 	return this._frames.length;
+}
+
+KFPlayer.prototype.begin = function() {
+	this._start = Date.now();
+}
+
+KFPlayer.prototype.end = function() {
+
+}
+
+KFPlayer.prototype.speed = function(s) {
+	this._speed = s;
+	// TODO Speed should only influence following playback
+}
+
+KFPlayer.prototype.frame = function() {
+	let t = Date.now();
+	let dt = t - this._start;
+	return this.at(dt*this._speed);
 }
 
 // -----------------------------------------------------------------------------
