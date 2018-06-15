@@ -48,10 +48,46 @@ loading csv or similar data (see csvtojson):
 
 ```javascript
 player.data({
-	timestamp: "TIME",
+	timestamp: "TIME",    // Property name
 	data: [
 		{TIME: 100, x1: 200, y1: 200, x2: 300, y2: 200},
 		{TIME: 200, x1: 240, y1: 320, x2: 300, y2: 210}
 	]
 });
 ```
+
+## API
+
+### .at(t)
+Get the state of all entities at the time `t`, where `t` is in seconds. It
+returns an object with a property for each entity and where the values for
+each entity have been appropriately (as specified) interpolated.
+
+### .duration()
+Return total animation duration in seconds.
+
+```
+console.log(player.duration());    // 5.4
+```
+
+### .entities()
+Return a list of all entities in the animation.
+
+### .frameCount()
+Return the number of keyframes.
+
+### .begin([time])
+Start a new animation sequence. Optional: give a time in seconds to start at.
+
+### .end()
+Finish an animation.
+
+### .frame()
+Get the state of the animation at the current frame. The frame to return is
+calculated from the system clock and animation speed. To get a specific point
+in the animation, use the `.at(t)` function.
+
+### .speed(s)
+Set the speed as a multiplier. eg. 2 runs the animation at 2x natural speed.
+Using no arguments, this function returns the current speed.
+
