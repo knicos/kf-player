@@ -1,0 +1,33 @@
+{
+  "name": "kf-player",
+  "version": "1.0.0",
+  "description": "Keyframe player from time stamped data sets",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knicos/kf-player.git"
+  },
+  "keywords": [
+    "keyframe",
+    "interpolate",
+    "animation",
+    "animate",
+    "key-frame"
+  ],
+  "author": "Nicolas Pope",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/knicos/kf-player/issues"
+  },
+  "homepage": "https://github.com/knicos/kf-player#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "binarysearch": "^1.0.0"
+  }
+}
