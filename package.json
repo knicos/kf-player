@@ -4,7 +4,8 @@
   "description": "Keyframe player from time stamped data sets",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "coverage": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec test/*.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/knicos/kf-player#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
     "mocha": "^5.2.0"
   },
   "dependencies": {

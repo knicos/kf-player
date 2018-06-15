@@ -1,4 +1,4 @@
-# kf-player
+# kf-player [![Build Status](https://travis-ci.org/knicos/kf-player.svg?branch=master)](https://travis-ci.org/knicos/kf-player) [![Coverage Status](https://coveralls.io/repos/github/knicos/kf-player/badge.svg?branch=master)](https://coveralls.io/github/knicos/kf-player?branch=master) [![npm version](https://badge.fury.io/js/kf-player.svg)](https://badge.fury.io/js/kf-player)
 Keyframe style data replay, used for dynamic eye tracking but can keyframe any
 data set.
 
